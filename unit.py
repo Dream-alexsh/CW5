@@ -4,7 +4,6 @@ from random import randint
 
 from equipment import Weapon, Armor
 from classes import UnitClass
-from typing import Optional
 
 
 class BaseUnit(ABC):
@@ -19,8 +18,6 @@ class BaseUnit(ABC):
         self.unit_class = unit_class
         self.hp = unit_class.max_health
         self.stamina = unit_class.max_stamina
-        self.weapon = None
-        self.armor = None
         self._is_skill_used = False
 
     @property
@@ -54,7 +51,7 @@ class BaseUnit(ABC):
 
         return target.get_damage(damage)
 
-    def get_damage(self, damage: int) -> Optional[int]:
+    def get_damage(self, damage: int) -> int:
         # Расчитываем урон
         if damage > 0:
             self.hp -= damage

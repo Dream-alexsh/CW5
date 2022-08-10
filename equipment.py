@@ -56,11 +56,11 @@ class Equipment:
                 return armor
         return None
 
-    def get_weapons_names(self) -> list:
+    def get_weapons_names(self) -> List[Weapon]:
         # возвращаем список с оружием
         return [weapon.name for weapon in self.equipment.weapons]
 
-    def get_armors_names(self) -> list:
+    def get_armors_names(self) -> List[Armor]:
         # возвращаем список с броней
         return [armor.name for armor in self.equipment.armors]
 
